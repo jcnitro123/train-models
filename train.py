@@ -48,9 +48,9 @@ val_data = object_detector.DataLoader.from_pascal_voc(
 )
 
 # Load model spec
-spec = object_detector.SSDDetectorSpec(
-  model_name='ssd_mobilenet_v2',
-  uri='https://tfhub.dev/tensorflow/ssd_mobilenet_v2/2',
+spec = object_detector.EfficientDetSpec(
+  model_name='efficientdet-lite2',
+  uri='https://tfhub.dev/tensorflow/efficientdet/lite2/feature-vector/1',
   model_dir='/content/checkpoints',
   hparams={'max_instances_per_image': 8000})
 
