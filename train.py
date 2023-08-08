@@ -30,19 +30,19 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'wild_boar/train'
-    'wild_boar/train'
-    'wild_boar/train'
-    'wild_boar/train'
+    'wild_boar/train',
+    'wild_boar/train',
+    'wild_boar/train',
+    'wild_boar/train',
     'wild_boar/train',
     ['bird','boar','dog','human','monkey']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'wild_boar/validate'
-    'wild_boar/validate'
-    'wild_boar/validate'
-    'wild_boar/validate'
+    'wild_boar/validate',
+    'wild_boar/validate',
+    'wild_boar/validate',
+    'wild_boar/validate',
     'wild_boar/validate',
     ['bird','boar','dog','human','monkey']
 )
