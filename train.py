@@ -31,12 +31,12 @@ print()
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
     'eggs_sample/train',
-    ['Eggs']
+    'Eggs'
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
     'eggs_sample/valid',
-    ['Eggs']
+    'Eggs'
 )
 
 # Load model spec
