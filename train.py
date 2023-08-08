@@ -30,14 +30,14 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'android_figurine/train',
-    'android_figurine/train',
+    'wild_boar/train',
+    'wild_boar/train',
     ['bird', 'boar', 'dog', 'human', 'monkey']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'android_figurine/validate',
-    'android_figurine/validate',
+    'wild_boar/validate',
+    'wild_boar/validate',
     ['bird', 'boar', 'dog', 'human', 'monkey']
 )
 
