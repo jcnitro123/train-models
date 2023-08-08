@@ -30,12 +30,12 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'train',
+    'eggs_sample/train',
     ['Eggs']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'valid',
+    'eggs_sample/valid',
     ['Eggs']
 )
 
