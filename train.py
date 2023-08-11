@@ -30,15 +30,15 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'five_samp/train',
-    'five_samp/train',
-    ['butter', 'milk', 'egg', 'onion', 'potato']
+    'test_30c/train',
+    'test_30c/train',
+    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'five_samp/validate',
-    'five_samp/validate',
-    ['butter', 'milk', 'egg', 'onion', 'potato']
+    'test_30c/valid',
+    'test_30c/valid',
+    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu']
 )
 
 # Load model spec
