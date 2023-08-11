@@ -30,15 +30,15 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'wild_boar/train',
-    'wild_boar/train',
-    ['bird', 'boar', 'dog', 'human', 'monkey']
+    'five_samp/train',
+    'five_samp/train',
+    ['butter', 'milk', 'egg', 'onion', 'potato']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'wild_boar/validate',
-    'wild_boar/validate',
-    ['bird', 'boar', 'dog', 'human', 'monkey']
+    'five_samp/validate',
+    'five_samp/validate',
+    ['butter', 'milk', 'egg', 'onion', 'potato']
 )
 
 # Load model spec
