@@ -63,7 +63,7 @@ for label, metric_value in eval_result.items():
 print()
 
 # Export the model
-model.export(export_dir='.', tflite_filename='android.tflite')
+model.export(export_dir='.', tflite_filename='EfficientDet2.tflite')
 
 # Evaluate the tflite model
 tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
