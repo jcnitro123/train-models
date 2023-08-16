@@ -66,7 +66,7 @@ print()
 model.export(export_dir='.', tflite_filename='android.tflite')
 
 # Evaluate the tflite model
-tflite_eval_result = model.evaluate_tflite('android.tflite', val_data)
+tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
 
 # Print COCO metrics for tflite
 print("COCO metrics tflite")
