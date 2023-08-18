@@ -32,13 +32,13 @@ print()
 train_data = object_detector.DataLoader.from_pascal_voc(
     'test_30c/train',
     'test_30c/train',
-    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu']
+    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu', 'egg plant']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
     'test_30c/valid',
     'test_30c/valid',
-    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu']
+    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu', 'egg plant']
 )
 
 # Load model spec
@@ -49,13 +49,13 @@ spec = object_detector.EfficientDetSpec(
   hparams={'max_instances_per_image': 8000})
 
 # Train the model
-model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=20, validation_data=val_data)
+model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=100, validation_data=val_data)
 
 # Evaluate the model
 eval_result = model.evaluate(val_data)
 
 # Print COCO metrics
-print("COCO metrics:")
+print("Metrics:")
 for label, metric_value in eval_result.items():
     print(f"{label}: {metric_value}")
 
