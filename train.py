@@ -49,13 +49,13 @@ spec = object_detector.EfficientDetSpec(
   hparams={'max_instances_per_image': 8000})
 
 # Train the model
-model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=100, validation_data=val_data)
+model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=20, validation_data=val_data)
 
 # Evaluate the model
 eval_result = model.evaluate(val_data)
 
 # Print COCO metrics
-print("Metrics:")
+print("mMAP Metrics:")
 for label, metric_value in eval_result.items():
     print(f"{label}: {metric_value}")
 
@@ -69,6 +69,6 @@ model.export(export_dir='.', tflite_filename='EfficientDet2.tflite')
 tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
 
 # Print COCO metrics for tflite
-print("COCO metrics tflite")
+print("mMAP metrics tflite")
 for label, metric_value in tflite_eval_result.items():
     print(f"{label}: {metric_value}")
