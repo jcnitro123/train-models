@@ -46,7 +46,7 @@ spec = object_detector.EfficientDetSpec(
   model_name='efficientdet-lite0',
   uri='https://tfhub.dev/tensorflow/efficientdet/lite0/feature-vector/1',
   model_dir='/content/checkpoints',
-  hparams={'max_instances_per_image': 8000})
+  hparams='')
 
 # Train the model
 model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=20, validation_data=val_data)
