@@ -44,7 +44,7 @@ val_data = object_detector.DataLoader.from_pascal_voc(
 # Load model spec
 spec = object_detector.EfficientDetSpec(
   model_name='efficientdet-lite0',
-  uri='https://tfhub.dev/tensorflow/efficientdet/lite0/detection/1',
+  uri='https://tfhub.dev/tensorflow/efficientdet/lite0/feature-vector/1',
   model_dir='/content/checkpoints',
   hparams={'max_instances_per_image': 8000})
 
@@ -63,10 +63,10 @@ for label, metric_value in eval_result.items():
 print()
 
 # Export the model
-model.export(export_dir='.', tflite_filename='EfficientDet2.tflite')
+model.export(export_dir='.', tflite_filename='EfficientDet0.tflite')
 
 # Evaluate the tflite model
-tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
+tflite_eval_result = model.evaluate_tflite('EfficientDet0.tflite', val_data)
 
 # Print COCO metrics for tflite
 print("mMAP metrics tflite")
