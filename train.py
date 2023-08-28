@@ -30,15 +30,15 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'test_30c/train',
-    'test_30c/train',
-    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'radish', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pumpkin', 'tofu', 'egg plant', 'chinese cabbage', 'okra']
+    'test_29c/train',
+    'test_29c/train',
+    ['chicken', 'pork', 'egg', 'garlic', 'spinach', 'pumpkin', 'okra', 'onion', 'tomato', 'carrot', 'beef', 'potato', 'bell pepper', 'corn', 'egg plant', 'cabbage', 'fish', 'broccoli', 'radish', 'shrimp', 'ginger', 'chilli', 'tofu', 'bitter gourd', 'lettuce', 'bok choy', 'cauliflower', 'chinese cabbage', 'cucumber']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'test_30c/valid',
-    'test_30c/valid',
-    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'radish', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pumpkin', 'tofu', 'egg plant', 'chinese cabbage', 'okra']
+    'test_29c/valid',
+    'test_29c/valid',
+    ['chicken', 'pork', 'egg', 'garlic', 'spinach', 'pumpkin', 'okra', 'onion', 'tomato', 'carrot', 'beef', 'potato', 'bell pepper', 'corn', 'egg plant', 'cabbage', 'fish', 'broccoli', 'radish', 'shrimp', 'ginger', 'chilli', 'tofu', 'bitter gourd', 'lettuce', 'bok choy', 'cauliflower', 'chinese cabbage', 'cucumber']
 )
 
 # Load model spec
