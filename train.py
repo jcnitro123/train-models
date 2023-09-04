@@ -30,26 +30,26 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'test_29c/train',
-    'test_29c/train',
-    ['chicken', 'pork', 'egg', 'garlic', 'spinach', 'pumpkin', 'okra', 'onion', 'tomato', 'carrot', 'beef', 'potato', 'bell pepper', 'corn', 'egg plant', 'cabbage', 'fish', 'broccoli', 'radish', 'shrimp', 'ginger', 'chilli', 'tofu', 'bitter gourd', 'lettuce', 'bok choy', 'cauliflower', 'chinese cabbage', 'cucumber']
+    'ingredients/train',
+    'ingredients/train',
+    ['beef', 'bellpepper', 'bittergourd', 'bokchoy', 'broccoli', 'cabbage', 'carrot', 'chicken', 'chili', 'corn', 'egg', 'eggplant', 'garlic', 'ginger', 'lettuce', 'okra', 'onion', 'pork', 'potato', 'pumpkin', 'radish', 'shrimp', 'tofu', 'tomato', 'fish']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'test_29c/valid',
-    'test_29c/valid',
-    ['chicken', 'pork', 'egg', 'garlic', 'spinach', 'pumpkin', 'okra', 'onion', 'tomato', 'carrot', 'beef', 'potato', 'bell pepper', 'corn', 'egg plant', 'cabbage', 'fish', 'broccoli', 'radish', 'shrimp', 'ginger', 'chilli', 'tofu', 'bitter gourd', 'lettuce', 'bok choy', 'cauliflower', 'chinese cabbage', 'cucumber']
+    'ingredients/valid',
+    'ingredients/valid',
+    ['beef', 'bellpepper', 'bittergourd', 'bokchoy', 'broccoli', 'cabbage', 'carrot', 'chicken', 'chili', 'corn', 'egg', 'eggplant', 'garlic', 'ginger', 'lettuce', 'okra', 'onion', 'pork', 'potato', 'pumpkin', 'radish', 'shrimp', 'tofu', 'tomato', 'fish']
 )
 
 # Load model spec
 spec = object_detector.EfficientDetSpec(
-  model_name='efficientdet-lite4',
-  uri='https://tfhub.dev/tensorflow/efficientdet/lite4/feature-vector/2',
+  model_name='efficientdet-lite2',
+  uri='https://tfhub.dev/tensorflow/efficientdet/lite2/feature-vector/1',
   model_dir='/content/checkpoints',
   hparams='')
 
 # Train the model
-model = object_detector.create(train_data, model_spec=spec, batch_size=32, train_whole_model=True, epochs=10, validation_data=val_data)
+model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=100, validation_data=val_data)
 
 # Evaluate the model
 eval_result = model.evaluate(val_data)
@@ -63,12 +63,12 @@ for label, metric_value in eval_result.items():
 print()
 
 # Export the model
-model.export(export_dir='.', tflite_filename='EfficientDet4.tflite')
+model.export(export_dir='.', tflite_filename='EfficientDet2.tflite')
 
 # Evaluate the tflite model
-tflite_eval_result = model.evaluate_tflite('EfficientDet4.tflite', val_data)
+#tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
 
 # Print COCO metrics for tflite
-print("mMAP metrics tflite")
-for label, metric_value in tflite_eval_result.items():
-    print(f"{label}: {metric_value}")
+#print("mMAP metrics tflite")
+#for label, metric_value in tflite_eval_result.items():
+#    print(f"{label}: {metric_value}")
