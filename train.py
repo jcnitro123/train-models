@@ -30,15 +30,15 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'finaldatasetv1/train',
-    'finaldatasetv1/train',
-    ['garlic', 'potato', 'chicken', 'bellpepper', 'shrimp', 'onion', 'carrot', 'tofu', 'chayote', 'okra', 'egg', 'eggplant', 'ginger', 'pork', 'tomato', 'bittergourd', 'fish', 'broccoli', 'cabbage', 'radish']
+    'test_30c/train',
+    'test_30c/train',
+    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu', 'egg plant']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'finaldatasetv1/valid',
-    'finaldatasetv1/valid',
-    ['garlic', 'potato', 'chicken', 'bellpepper', 'shrimp', 'onion', 'carrot', 'tofu', 'chayote', 'okra', 'egg', 'eggplant', 'ginger', 'pork', 'tomato', 'bittergourd', 'fish', 'broccoli', 'cabbage', 'radish']
+    'test_30c/valid',
+    'test_30c/valid',
+    ['beef', 'shrimp', 'spinach', 'potato', 'springonion', 'fish', 'garlic', 'pork', 'carrot', 'chilli', 'tomato', 'chicken', 'cabbage', 'egg', 'onion', 'asparagus', 'bell pepper', 'bitter gourd', 'bok choy', 'broccoli', 'cauliflower', 'corn', 'cucumber', 'ginger', 'lettuce', 'pork belly', 'pumpkin', 'tofu', 'egg plant']
 )
 
 # Load model spec
@@ -66,9 +66,9 @@ print()
 model.export(export_dir='.', tflite_filename='EfficientDet2.tflite')
 
 # Evaluate the tflite model
-#tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
+tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
 
 # Print COCO metrics for tflite
-#print("mMAP metrics tflite")
-#for label, metric_value in tflite_eval_result.items():
-#    print(f"{label}: {metric_value}")
+print("mMAP metrics tflite")
+for label, metric_value in tflite_eval_result.items():
+    print(f"{label}: {metric_value}")
