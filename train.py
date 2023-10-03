@@ -49,7 +49,7 @@ spec = object_detector.EfficientDetSpec(
   hparams='')
 
 # Train the model
-model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=100, validation_data=val_data)
+model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=50, validation_data=val_data)
 
 # Evaluate the model
 eval_result = model.evaluate(val_data)
