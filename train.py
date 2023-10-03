@@ -66,9 +66,9 @@ print()
 model.export(export_dir='.', tflite_filename='EfficientDet2.tflite')
 
 # Evaluate the tflite model
-tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
+#tflite_eval_result = model.evaluate_tflite('EfficientDet2.tflite', val_data)
 
 # Print COCO metrics for tflite
-print("mMAP metrics tflite")
-for label, metric_value in tflite_eval_result.items():
-    print(f"{label}: {metric_value}")
+#print("mMAP metrics tflite")
+#for label, metric_value in tflite_eval_result.items():
+#    print(f"{label}: {metric_value}")
