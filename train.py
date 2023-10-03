@@ -30,14 +30,14 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'finaldataset/train',
-    'finaldataset/train',
+    '20detection/train',
+    '20detection/train',
     ['bellpepper', 'bittergourd', 'broccoli', 'cabbage', 'carrot', 'chicken', 'egg', 'eggplant', 'garlic', 'ginger', 'okra', 'onion', 'pork', 'potato', 'radish', 'shrimp', 'tofu', 'tomato', 'fish', 'chayote']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'finaldataset/valid',
-    'finaldataset/valid',
+    '20detection/valid',
+    '20detection/valid',
     ['bellpepper', 'bittergourd', 'broccoli', 'cabbage', 'carrot', 'chicken', 'egg', 'eggplant', 'garlic', 'ginger', 'okra', 'onion', 'pork', 'potato', 'radish', 'shrimp', 'tofu', 'tomato', 'fish', 'chayote']
 )
 
